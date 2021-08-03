@@ -1,0 +1,37 @@
+package com.cesar31.sumaparser.parser;
+
+import com.cesar31.sumaparser.ast.Operation;
+
+class SumaParser;
+
+parser code {:
+	public SumaParser(SumaLex lex) {
+		super(lex);
+	}
+:}
+
+terminal Integer INTEGER;
+terminal PLUS, TIMES, LPAREN, RPAREN, ERROR;
+
+non terminal Operation E, T, F;
+
+/* root production */
+E ::=
+				E:l PLUS T:r
+					{: RESULT = new Operation("+", l, r); :}
+				| T:i
+					{: RESULT = i; :}
+				;
+
+T ::=
+				T:l TIMES F:r
+					{: RESULT = new Operation("*", l, r); :}
+				| F:i
+					{: RESULT = i; :}
+				;
+
+F ::=		INTEGER:i
+					{: RESULT = new Operation("NUM", Integer.valueOf(i.toString())); :}
+				| LPAREN E:i RPAREN
+					{: RESULT = i; :}
+				;

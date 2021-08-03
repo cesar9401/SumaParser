@@ -1,0 +1,8 @@
+# Maven
+/target
+dependency-reduced-pom.xml
+
+# Parser
+/parser/*.java~
+/parser/*.java
+/parser/*.sh
