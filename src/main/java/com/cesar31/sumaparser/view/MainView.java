@@ -1,6 +1,6 @@
 package com.cesar31.sumaparser.view;
 
-import com.cesar31.sumaparser.Main.Control;
+import com.cesar31.sumaparser.main.Control;
 import java.awt.Event;
 import javax.swing.Action;
 import javax.swing.KeyStroke;

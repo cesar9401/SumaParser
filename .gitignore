@@ -6,3 +6,7 @@ dependency-reduced-pom.xml
 /parser/*.java~
 /parser/*.java
 /parser/*.sh
+
+# png images
+*.png
+
